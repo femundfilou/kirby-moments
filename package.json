@@ -1,6 +1,6 @@
 {
 	"name": "femundfilou-moments",
-	"version": "0.0.0",
+	"version": "1.0.0-beta.0",
 	"description": "Every Moment Matters. Share Yours.",
 	"scripts": {
 		"build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./src/moments.css ./src/reset.css --output-dir ./assets/",
