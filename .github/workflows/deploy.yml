@@ -2,8 +2,7 @@ name: Deployment
 
 on:
   push:
-    tags:
-      - v*
+    branches: [main]
 
 jobs:
   deploy:
@@ -46,7 +45,7 @@ jobs:
     - name: Pack it
       shell: bash
       run: |
-        tar -czvf package-${{ github.ref_name }}.tar.gz -C docs/.vitepress/dist .
+        tar -czvf package-${{ github.sha }}.tar.gz -C docs/.vitepress/dist .
 
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v2
@@ -59,13 +58,13 @@ jobs:
       env:
         SERVER: '${{ secrets.SERVER }}'
         USER: '${{ secrets.USER }}'
-        COMMIT: '${{ github.ref_name }}'
+        COMMIT: '${{ github.sha }}'
         HOME_DIR: '${{ secrets.HOME_DIR }}'
         BASE_DIR: 'plugins.femundfilou.com/kirby-moments'
         RELEASE_DIR: 'releases'
         ROOT_DIR: 'current'
-        PREFIX: 'r'
-        PUBLIC_FOLDER: 'public'
+        PREFIX: ''
+        PUBLIC_FOLDER: ''
         ENABLE_HTACCESS_CONFIG: 0
       run: |
         rsync -a -e "ssh -o StrictHostKeyChecking=no" --delete package-$COMMIT.tar.gz $USER@$SERVER:$HOME_DIR
