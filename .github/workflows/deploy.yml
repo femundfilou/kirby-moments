@@ -41,7 +41,7 @@ jobs:
       run: pnpm install
 
     - name: Run build
-      run: pnpm build
+      run: pnpm docs:build
 
     - name: Pack it
       shell: bash
