@@ -1,0 +1,27 @@
+{
+	"name": "femundfilou-moments",
+	"version": "0.0.0",
+	"description": "Every Moment Matters. Share Yours.",
+	"scripts": {
+		"build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./src/moments.css ./src/reset.css --output-dir ./assets/",
+		"build:ts": "tsc && esbuild ./src/moments.js --minify --outfile=./assets/moments.min.js",
+		"build": "pnpm build:css && pnpm build:ts",
+		"dev": "turbowatch ./turbowatch.ts",
+		"release": "release-it",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:preview": "vitepress preview docs"
+	},
+	"author": "Justus Kraft <justus@femundfilou.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@release-it/bumper": "^6.0.1",
+		"@release-it/conventional-changelog": "^8.0.1",
+		"esbuild": "^0.21.5",
+		"lightningcss-cli": "^1.25.1",
+		"release-it": "^17.3.0",
+		"turbowatch": "^2.29.4",
+		"typescript": "^5.4.5",
+		"vitepress": "^1.2.3"
+	}
+}

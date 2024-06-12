@@ -1,0 +1,3 @@
+<?php
+
+snippet('moments');

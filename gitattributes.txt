@@ -1,0 +1,17 @@
+# Git
+.gitattributes export-ignore
+.gitignore export-ignore
+
+# Dev
+.nvmrc export-ignore
+.release-it.json export-ignore
+.pnpm-lock.yaml export-ignore
+.editorconfig export-ignore
+turbowatch.ts export-ignore
+tsconfig.json export-ignore
+deploy.sh export-ignore
+.release-it.json export-ignore
+.github export-ignore
+
+# Docs
+docs export-ignore
