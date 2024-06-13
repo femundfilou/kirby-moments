@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	title: "Kirby Moments",
+	base: '/kirby-moments/',
 	description: "Add a simple photo feed to your Kirby CMS powered website.",
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
