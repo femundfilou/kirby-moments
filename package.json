@@ -1,7 +1,8 @@
 {
-	"name": "femundfilou-moments",
+	"name": "femundfilou-kirby-moments",
 	"version": "1.0.0-beta.1",
-	"description": "Every Moment Matters. Share Yours.",
+	"description": "Little Moments Matter. Share Yours.",
+	"homepage": "https://plugins.femundfilou.com/kirby-moments",
 	"scripts": {
 		"build:css": "lightningcss --minify --bundle --targets '>= 0.25%' ./src/moments.css ./src/reset.css --output-dir ./assets/",
 		"build:ts": "tsc && esbuild ./src/moments.js --minify --outfile=./assets/moments.min.js",
