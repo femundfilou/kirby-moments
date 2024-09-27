@@ -5,12 +5,12 @@ You can install this plugin in three different ways, depending on personal prefe
 
 ### Install via download
 
-[Download](https://github.com/femundfilou/kirby-moments/releases/latest) and copy the latest release to `/site/plugins/moments`.
+[Download](https://github.com/femundfilou/kirby-moments/releases/latest) and copy the latest release to `/site/plugins/kirby-moments`.
 
 ### Install as git submodule
 
 ```sh
-git submodule add https://github.com/femundfilou/kirby-moments.git site/plugins/moments
+git submodule add https://github.com/femundfilou/kirby-moments.git site/plugins/kirby-moments
 ```
 
 ### Install as composer package
