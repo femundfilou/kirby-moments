@@ -10,7 +10,7 @@ $allMoments = collection('moments/all')->flip();
 	</a>
 	<div class="moment">
 		<?php snippet('moments-image', ['moment' => $page]);
-		?>
+?>
 		<div class="moment-controls">
 			<?php if ($page->hasPrev($allMoments)) : ?>
 				<a href="<?= $page->prev($allMoments)->url() ?>" class="moment-controls__prev" aria-label="<?= t('femundfilou.kirby-moments.aria-label.prev') ?>">

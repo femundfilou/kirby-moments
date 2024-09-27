@@ -3,8 +3,8 @@
 		<li>
 			<a href="<?= $moment->url() ?>" class="moment">
 				<?php
-				snippet('moments-image', ['moment' => $moment, 'type' => 'grid']);
-				?>
+                snippet('moments-image', ['moment' => $moment, 'type' => 'grid']);
+	    ?>
 			</a>
 		</li>
 	<?php endforeach; ?>

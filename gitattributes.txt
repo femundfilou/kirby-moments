@@ -1,6 +1,7 @@
 # Git
 .gitattributes export-ignore
 .gitignore export-ignore
+gitattributes.txt export-ignore
 
 # Dev
 .nvmrc export-ignore
@@ -12,6 +13,9 @@ tsconfig.json export-ignore
 deploy.sh export-ignore
 .release-it.json export-ignore
 .github export-ignore
+deploy.sh export-ignore
+editorconfig.txt export-ignore
 
 # Docs
 docs export-ignore
+kirby-moments.png export-ignore

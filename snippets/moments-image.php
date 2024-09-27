@@ -1,8 +1,8 @@
 <?php
 if ($image = $moment->image()) :
-	$type = $type ?? 'lightbox';
-	$sizes = $type === 'grid' ? option('femundfilou.kirby-moments.thumbs.sizes.grid', 'auto') : option('femundfilou.kirby-moments.thumbs.sizes.lightbox', '100vw');
-?>
+    $type = $type ?? 'lightbox';
+    $sizes = $type === 'grid' ? option('femundfilou.kirby-moments.thumbs.sizes.grid', 'auto') : option('femundfilou.kirby-moments.thumbs.sizes.lightbox', '100vw');
+    ?>
 	<figure class="moment-image">
 		<picture>
 			<?php if ($type === 'grid') : ?>
