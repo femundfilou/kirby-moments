@@ -22,17 +22,17 @@ export default defineConfig({
 				]
 			},
 			{
-				text: 'Upload images',
+				text: 'Frontend',
 				items: [
-					{ text: 'Apple Shortcuts', link: '/shortcuts' }
+					{ text: 'Output', link: '/output' },
+					{ text: 'Styles', link: '/styles' },
+					{ text: 'Scripts', link: '/scripts' }
 				]
 			},
 			{
-				text: 'Frontend',
+				text: 'Upload images',
 				items: [
-					{ text: 'Styles', link: '/styles' },
-					{ text: 'Scripts', link: '/scripts' },
-					{ text: 'Output', link: '/output' }
+					{ text: 'Apple Shortcuts', link: '/shortcuts' }
 				]
 			},
 			{

@@ -13,7 +13,7 @@ If you use the snippet or block on your pages, you have to include the scripts i
 ```html
 <head>
 	<!-- other content-->
-	<?= js('/media/plugins/femundfilou/moments/moments.min.js'); ?>
+	<?= js('/media/plugins/femundfilou/kirby-moments/moments.min.js'); ?>
 </head>
 ```
 

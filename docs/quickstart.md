@@ -23,10 +23,10 @@ composer require femundfilou/kirby-moments
 
 This plugin needs a page to store all images. By default, the plugin will look for a page with the slug `moments` and the template of `moments`.
 
-Create a new page called `Moments` and rename it's txt file to `moments.txt` or `moments.xx.txt` if you're using a multi-language enabled page (`.xx.` being your default language code).
+After install, the plugin will create the store page itself and set it to published.
 
 ::: info Custom page slug
-You can customize the slug being used through the [configuration](/configuration).
+You can customize the slug being used through the [configuration](/configuration). If you change the slug after initialization, be sure to delete the previously generated page.
 :::
 
 ## Enable Apple Shortcut
@@ -42,6 +42,6 @@ Do not make this token public. Don't commit it to a git repository. If you store
 ```php
 return [
 	// ... Other options
-	"femundfilou.moments.token" => "my-secret"
+	"femundfilou.kirby-moments.token" => "my-secret"
 ]
 ```

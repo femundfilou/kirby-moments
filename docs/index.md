@@ -21,7 +21,7 @@ hero:
 
 <style>
 	h2.h1 {
-		font-size: 4rem;
+		font-size: clamp(2rem, 10vw, 4rem);
 		line-height: 1;
 		font-weight: 700;
 		font-family: var(--vp-font-family-headline);
@@ -29,7 +29,7 @@ hero:
 	}
 
 	.features {
-		--_gap: 1.5rem;
+		--_gap: 2rem;
 		--_columns: 1;
 		display: flex;
 		flex-wrap: wrap;
@@ -46,6 +46,7 @@ hero:
 
 	@media (min-width: 960px) {
 		.features {
+			--_gap: 5rem;
 			--_columns: 3;
 		}
 	}
@@ -58,12 +59,55 @@ hero:
 	h3.h3 {
 		font-weight: 700;
 	}
+
+	:root {
+  --color-oxford: #000E29;
+  --color-oxford-light: hsl(220, 100%, 12%);
+  --color-white: #FBFBF9;
+  --color-blue: #025BFF;
+  --color-ivory: #F7F7E7;
+  --color-celadon: #AEFFC4;
+  --color-mauve: #D9B3F7;
+  --color-giants-orange: #FA6934;
+  --clea-base-color: var(--color-oxford);
+  --clea-base-color-invert: var(--color-white);
+	--photogrid-color: #EDEDC6;
+}
+
+:root.dark {
+	--photogrid-color: var(--color-oxford-light);
+}
+
+/**
+INTRO
+*/
+
+.intro figure {
+	position: relative;
+}
+
+.intro figure svg {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.intro h2 {
+	position: relative;
+	top: -5rem;
+	margin-bottom:-5rem;
+}
+
 </style>
 
 
 
-<section class="section">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2587 931" fill="none"><path fill="var(--vp-c-bd-contrast)" d="M0 0h608v608H0zM0 668h608v608H0zM659 0h608v608H659zM659 668h608v608H659zM1320 0h608v608h-608zM1320 668h608v608h-608zM1979 0h608v608h-608zM1979 668h608v608h-608z"/><path fill="url(#b)" d="M0 0h2587v931H0z"/><defs><linearGradient id="b" x1="1293.5" x2="1293.5" y1="217.363" y2="931" gradientUnits="userSpaceOnUse"><stop stop-color="var(--vp-c-bg)" stop-opacity="0"/><stop offset="1" stop-color="var(--vp-c-bg)"/></linearGradient></defs></svg>
+<section class="intro">
+	<figure>
+		<img src="./grid.png" />
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2587 931" fill="none"><path fill="url(#b)" d="M0 0h2587v931H0z"/><defs><linearGradient id="b" x1="1293.5" x2="1293.5" y1="200" y2="931" gradientUnits="userSpaceOnUse"><stop stop-color="var(--vp-c-bg)" stop-opacity="0"/><stop offset="1" stop-color="var(--vp-c-bg)"/></linearGradient></defs></svg>
+	</figure>
 	<h2 class="text-center h1">Claim back your photo feed</h2>
 </section>
 

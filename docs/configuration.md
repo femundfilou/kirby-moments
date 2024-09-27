@@ -8,7 +8,7 @@ You can change, how the date is being displayed. By default, the plugin will che
 ```php
 return [
 	// ... other options
-	'femundfilou.moments' => [
+	'femundfilou.kirby-moments' => [
 		'dateformat' => 'dd.MM.YYYY',
 	]
 ];
@@ -21,7 +21,7 @@ You can change the visible parent of your moments. This will replace your `store
 ```php
 return [
 	// ... other options
-	'femundfilou.moments' => [
+	'femundfilou.kirby-moments' => [
 		'pageid' => 'stories',
 	]
 ];
@@ -31,12 +31,12 @@ In this example, the images will still be stored in the page `moments` but displ
 
 ## Use a different page for storage
 
-You can change the page used to store all images by changing the slug here. Be sure to also change your template to `moments`, e.g. rename the content file to `moments.txt` or `moments.xx.txt` on a multi-language page.
+You can change the page used to store all images by changing the slug here. Be sure to also change your template to `moments`, e.g. rename the content file to `moments.txt` or `moments.xx.txt` on a multi-language page. You can also delete the currently used store page and the plugin will generate a new store page automatically. 
 
 ```php
 return [
 	// ... other options
-	'femundfilou.moments' => [
+	'femundfilou.kirby-moments' => [
 		'storeid' => 'momentsstore',
 	]
 ];
@@ -49,7 +49,7 @@ You can adjust the thumbnails being created by modifying the srcsets. You can al
 ```php
 return [
 	// ... other options
-	'femundfilou.moments' => [
+	'femundfilou.kirby-moments' => [
 		'thumbs' => [
 			'sizes' => [
 				'grid' => '(min-width: 900px) 25vw, (min-width: 600px) 33vw, (min-width: 400px) 50vw, 100vw',
@@ -108,7 +108,7 @@ Do not make this token public. Don't commit it to a git repository. If you store
 ```php
 return [
 	// ... other options
-	'femundfilou.moments' => [
+	'femundfilou.kirby-moments' => [
 		'token' => 'my-secret',
 	]
 ];
@@ -122,7 +122,7 @@ By default, the plugin creates an RSS feed that can be subscribed to. You can di
 ```php
 return [
 	// ... other options
-	'femundfilou.moments' => [
+	'femundfilou.kirby-moments' => [
 		'feed' => [
 			'active' => false
 		],

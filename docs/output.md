@@ -25,6 +25,10 @@ To use the snippet, just place it anywhere on your page. It will automatically s
 <!-- Other content -->
 ```
 
+:::info 
+To make the lightbox aware of the page, where your moments are displayed, you can adjust the `pageid` in your configuration. [See how](/configuration.html#use-a-different-page-for-display)
+:::
+
 
 ## Overwrite core parts
 

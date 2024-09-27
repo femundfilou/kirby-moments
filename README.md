@@ -52,7 +52,7 @@ If you want to enable the usage of Apple Shortcuts to upload new images, you hav
 ```php
 return [
 	// ... Other options
-	"femundfilou.moments.token" => "my-secret"
+	"femundfilou.kirby-moments.token" => "my-secret"
 ]
 ```
 

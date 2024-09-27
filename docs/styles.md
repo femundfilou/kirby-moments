@@ -8,7 +8,7 @@ If you use the snippet or block on your pages, you have to include the styles in
 ```html
 <head>
 	<!-- other content-->
-	<?= css('/media/plugins/femundfilou/moments/moments.css'); ?>
+	<?= css('/media/plugins/femundfilou/kirby-moments/moments.css'); ?>
 </head>
 ```
 
