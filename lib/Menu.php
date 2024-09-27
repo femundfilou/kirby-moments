@@ -29,7 +29,7 @@ class Menu
      * @param string $icon The icon for the menu item
      * @return array The added menu item
      */
-    public static function page(string | null $label = null, string $icon = 'images'): array
+    public static function page(string | null $label = null, string $icon = 'moments'): array
     {
         $link = 'pages/' . option('femundfilou.kirby-moments.storeId', 'moments');
         return static::$pages[] = [

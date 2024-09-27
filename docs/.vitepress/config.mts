@@ -30,6 +30,12 @@ export default defineConfig({
 				]
 			},
 			{
+				text: 'Panel',
+				items: [
+					{ text: 'Menu', link: '/menu' }
+				]
+			},
+			{
 				text: 'Upload images',
 				items: [
 					{ text: 'Apple Shortcuts', link: '/shortcuts' }
