@@ -24,7 +24,7 @@ return function () {
 		$routes = array_merge($routes, getRedirectRoutes($momentsSlug, $momentsStore, $momentsPage));
 	}
 
-	if (option('femundfilou.kirby-moments.feed.active', false) !== false) {
+	if (option('femundfilou.kirby-moments.feed.active', true) !== false) {
 		$routes = array_merge($routes, getFeedRoutes($momentsSlug));
 	}
 
@@ -94,7 +94,7 @@ function getFeedRoutes($momentsSlug)
  * @param string|null $renderType
  * @return Kirby\Cms\Page
  */
-function renderFeedPage($contentType, $renderType = null)
+function renderFeedPage($contentType, $renderType = "html")
 {
 	kirby()->response()->type($contentType);
 	return Page::factory([
@@ -102,7 +102,7 @@ function renderFeedPage($contentType, $renderType = null)
 		'template' => 'feed',
 		'model' => 'feed',
 		'content' => ['title' => t('feed')],
-	])->render($renderType ? ['contentType' => $renderType] : []);
+	])->render(contentType: $renderType);
 }
 
 /**

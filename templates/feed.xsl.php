@@ -9,8 +9,8 @@ xmlns="http://www.w3.org/1999/xhtml">
         <head>
             <title>Photo Feed</title>
 			<style>
-				<?= F::read(asset('/media/plugins/femundfilou/moments/reset.css')->root()) ?>
-				<?= F::read(asset('/media/plugins/femundfilou/moments/moments.css')->root()) ?>
+				<?= F::read(asset('/media/plugins/femundfilou/kirby-moments/reset.css')->root()) ?>
+				<?= F::read(asset('/media/plugins/femundfilou/kirby-moments/moments.css')->root()) ?>
 				ul.moments-grid {
 					max-width: 1140px;
 					margin: 0 auto;
