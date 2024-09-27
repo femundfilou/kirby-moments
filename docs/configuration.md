@@ -16,7 +16,7 @@ return [
 
 ## Use a different page for display
 
-You can change the visible parent of your moments. This will replace your `storeid` in the lightbox url, but still upload all images to your storage page.
+You can change the visible parent of your moments. This will replace your `storeid` in the lightbox url, but still upload all images to your storage page. The storage page will redirect to this page.
 
 ```php
 return [
