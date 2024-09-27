@@ -88,9 +88,10 @@ INTRO
 
 .intro figure svg {
 	position: absolute;
-	bottom: 0;
-	width: 100%;
-	left: 0;
+	bottom: -1%;
+	width: 102%;
+	height: 102%;
+	left: -1%;
 }
 
 .intro h2 {
