@@ -29,37 +29,10 @@ git submodule add https://github.com/femundfilou/kirby-moments.git site/plugins/
 composer require femundfilou/kirby-moments
 ```
 
-## Create necessary folder
-
-This plugin needs a page to store all images. By default, the plugin will look for a page with the slug `moments` and the template of `moments`.
-
-Create a new page called `Moments` and rename it's txt file to `moments.txt` or `moments.xx.txt` if you're using a multi-language enabled page (`.xx.` being your default language code).
-
-::: info Custom page slug
-You can customize the slug being used through the [configuration](/configuration).
-:::
-
-## Enable Apple Shortcut
-
-If you want to enable the usage of Apple Shortcuts to upload new images, you have to set a secret in your `site/config/config.php`. This secret protects your website, so only you can upload images to your feed.
-
-> [!WARNING]
-> Do not make this token public. Don't commit it to a git repository. If you store > your `config.php` in git, please use a `.env` file to securely store your secrets.
-> 
-> [How to use .env with Kirby](https://github.com/bnomei/kirby3-dotenv)
-
-
-```php
-return [
-	// ... Other options
-	"femundfilou.kirby-moments.token" => "my-secret"
-]
-```
-
 ## License
 
 MIT
 
 ## Credits
 
-© [Justus Kraft](https://github.com/jukra00)
+[Justus Kraft](https://github.com/jukra00)
