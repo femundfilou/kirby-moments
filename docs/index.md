@@ -20,7 +20,7 @@ hero:
 </script>
 
 <style>
-	h2.h1 {
+	.vp-doc h2.h1, h2.h1 {
 		font-size: clamp(2rem, 10vw, 4rem);
 		line-height: 1;
 		font-weight: 700;
@@ -56,7 +56,7 @@ hero:
 		flex: 1 1 calc((100% / var(--_columns)) - (var(--_gap) * (var(--_columns) - 1) / var(--_columns)));
 	}
 
-	h3.h3 {
+	.vp-doc h3.h3,h3.h3 {
 		font-weight: 700;
 	}
 
@@ -94,7 +94,7 @@ INTRO
 	left: -1%;
 }
 
-.intro h2 {
+.vp-doc .intro h2, .intro h2 {
 	position: relative;
 	top: -5rem;
 	margin-bottom:-5rem;
