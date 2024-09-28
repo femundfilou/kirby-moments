@@ -97,22 +97,7 @@ return [
 
 ## Enable endpoint for Apple Shortcuts
 
-To enable the ability to use Apple Shortcuts to upload an image, you have to set a secret token to secure your website. This token protects your endpoint, so only you can upload images.
-
-:::warning Caution!
-Do not make this token public. Don't commit it to a git repository. If you store your `config.php` in git, please use a `.env` file to securely store your secrets. 
-
-[How to use .env with Kirby](https://github.com/bnomei/kirby3-dotenv)
-:::
-
-```php
-return [
-	// ... other options
-	'femundfilou.kirby-moments' => [
-		'token' => 'my-secret',
-	]
-];
-```
+You can use an Apple Shortcut to upload images quickly. See the [configuration](/shortcuts).
 
 		
 ## Disable RSS Feed

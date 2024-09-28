@@ -31,17 +31,4 @@ You can customize the slug being used through the [configuration](/configuration
 
 ## Enable Apple Shortcut
 
-If you want to enable the usage of Apple Shortcuts to upload new images, you have to set a secret in your `site/config/config.php`. This secret protects your website, so only you can upload images to your feed.
-
-:::warning Caution!
-Do not make this token public. Don't commit it to a git repository. If you store your `config.php` in git, please use a `.env` file to securely store your secrets. 
-
-[How to use .env with Kirby](https://github.com/bnomei/kirby3-dotenv)
-:::
-
-```php
-return [
-	// ... Other options
-	"femundfilou.kirby-moments.token" => "my-secret"
-]
-```
+You can use an Apple Shortcut to upload images quickly. See the [configuration](/shortcuts).
