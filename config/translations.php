@@ -8,7 +8,8 @@ return [
         'femundfilou.kirby-moments.panel.templates.moments.name' => 'Momente',
         'femundfilou.kirby-moments.panel.menu.label' => 'Momente',
         'femundfilou.kirby-moments.panel.section.label' => 'Momente',
-        'femundfilou.kirby-moments.panel.section.empty' => 'Starte mit deinem ersten Moment'
+        'femundfilou.kirby-moments.panel.section.empty' => 'Starte mit deinem ersten Moment',
+        'femundfilou.kirby-moments.panel.blocks.moments.name' => 'Momente'
     ],
     'en' => [
         'femundfilou.kirby-moments.aria-label.close' => 'Back to overview',
@@ -18,6 +19,7 @@ return [
         'femundfilou.kirby-moments.panel.menu.label' => 'Moments',
         'femundfilou.kirby-moments.panel.section.label' => 'Moments',
         'femundfilou.kirby-moments.panel.section.empty' => 'Start with your first moment',
+        'femundfilou.kirby-moments.panel.blocks.moments.name' => 'Moments'
     ],
     'fr' => [
         'femundfilou.kirby-moments.aria-label.close' => "Retour à l'aperçu",
@@ -26,24 +28,27 @@ return [
         'femundfilou.kirby-moments.panel.templates.moments.name' => 'Moments',
         'femundfilou.kirby-moments.panel.menu.label' => 'Moments',
         'femundfilou.kirby-moments.panel.section.label' => 'Moments',
-        'femundfilou.kirby-moments.panel.section.empty' => 'Start with your first moment',
+        'femundfilou.kirby-moments.panel.section.empty' => 'Commencez par votre premier moment',
+        'femundfilou.kirby-moments.panel.blocks.moments.name' => 'Moments'
     ],
     'es' => [
         'femundfilou.kirby-moments.aria-label.close' => 'Volver a la vista general',
         'femundfilou.kirby-moments.aria-label.prev' => 'Foto anterior',
         'femundfilou.kirby-moments.aria-label.next' => 'Foto siguiente',
-        'femundfilou.kirby-moments.panel.templates.moments.name' => 'Moments',
-        'femundfilou.kirby-moments.panel.menu.label' => 'Moments',
-        'femundfilou.kirby-moments.panel.section.label' => 'Moments',
-        'femundfilou.kirby-moments.panel.section.empty' => 'Start with your first moment',
+        'femundfilou.kirby-moments.panel.templates.moments.name' => 'Momentos',
+        'femundfilou.kirby-moments.panel.menu.label' => 'Momentos',
+        'femundfilou.kirby-moments.panel.section.label' => 'Momentos',
+        'femundfilou.kirby-moments.panel.section.empty' => 'Comience por su primer momento',
+        'femundfilou.kirby-moments.panel.blocks.moments.name' => 'Momentos'
     ],
     'it' => [
         'femundfilou.kirby-moments.aria-label.close' => 'Torna alla panoramica',
         'femundfilou.kirby-moments.aria-label.prev' => 'Foto precedente',
         'femundfilou.kirby-moments.aria-label.next' => 'Foto successiva',
-        'femundfilou.kirby-moments.panel.templates.moments.name' => 'Moments',
-        'femundfilou.kirby-moments.panel.menu.label' => 'Moments',
-        'femundfilou.kirby-moments.panel.section.label' => 'Moments',
-        'femundfilou.kirby-moments.panel.section.empty' => 'Start with your first moment',
+        'femundfilou.kirby-moments.panel.templates.moments.name' => 'Momenti',
+        'femundfilou.kirby-moments.panel.menu.label' => 'Momenti',
+        'femundfilou.kirby-moments.panel.section.label' => 'Momenti',
+        'femundfilou.kirby-moments.panel.section.empty' => 'Iniziare con il primo momento',
+        'femundfilou.kirby-moments.panel.blocks.moments.name' => 'Momenti'
     ],
 ];
