@@ -1,5 +1,12 @@
 
 
+## [1.0.0-beta.4](///compare/v1.0.0-beta.3...v1.0.0-beta.4) (2024-09-29)
+
+
+### Features
+
+* update shortcut 45c17db
+
 ## [1.0.0-beta.3](///compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-09-29)
 
 
