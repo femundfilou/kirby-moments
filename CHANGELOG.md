@@ -1,5 +1,12 @@
 
 
+## [1.0.0-beta.5](///compare/v1.0.0-beta.4...v1.0.0-beta.5) (2024-09-29)
+
+
+### Features
+
+* use X-MOMENTS-TOKEN instead of authorization 5f700b9
+
 ## [1.0.0-beta.4](///compare/v1.0.0-beta.3...v1.0.0-beta.4) (2024-09-29)
 
 
