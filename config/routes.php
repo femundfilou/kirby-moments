@@ -5,7 +5,9 @@
  * @return array Routes configuration
  */
 
+use Femundfilou\Moments\Token;
 use Kirby\Cms\Page;
+use Kirby\Data\Yaml;
 
 return function () {
     $momentsPage = option('femundfilou.kirby-moments.pageid') ? page(option('femundfilou.kirby-moments.pageid')) : null;
@@ -32,6 +34,7 @@ return function () {
 
     return $routes;
 };
+
 
 /**
  * Get redirect routes for moments
@@ -135,16 +138,29 @@ function getNewMomentRoute()
 }
 
 /**
- * Verify bearer token
+ * Verify token
  * @return bool
  */
-function verifyToken()
+function verifyToken(): bool
 {
     $authHeader = kirby()->request()->header('X-MOMENTS-TOKEN');
-    $token = option('femundfilou.kirby-moments.token', '');
-    return $token && $authHeader && $authHeader === "{$token}";
-}
+    if (!$authHeader) return false;
 
+    $userId = Token::getUserId($authHeader);
+    if (!$userId) return false;
+
+    $kirbyUser = kirby()->user($userId);
+    if (!$kirbyUser) return false;
+
+    $tokens = Yaml::decode($kirbyUser->app_tokens()) ?? [];
+    foreach ($tokens as $token) {
+        if ($token['token'] === $authHeader) {
+            return true;
+        }
+    }
+
+    return false;
+}
 /**
  * Upload file to page
  * @param Kirby\Cms\Page $page

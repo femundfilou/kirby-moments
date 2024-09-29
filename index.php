@@ -1,14 +1,47 @@
 <?php
 
+use Kirby\Data\Yaml;
+use Kirby\Toolkit\A;
+use Kirby\Toolkit\Date;
+
 require __DIR__ . '/models/Moments.php';
 require __DIR__ . '/models/Moment.php';
 
 Kirby\Filesystem\F::loadClasses([
-    'femundfilou\\moments\\menu' => 'lib/Menu.php'
+    'femundfilou\\moments\\menu' => 'lib/Menu.php',
+    'femundfilou\\moments\\token' => 'lib/Token.php'
 ], __DIR__);
 
 
 Kirby\Cms\App::plugin('femundfilou/kirby-moments', [
+    'areas' => [
+        'user' => [
+            'dialogs' => [
+                require __DIR__ . '/dialogs/create.php',
+                require __DIR__ . '/dialogs/delete.php'
+            ],
+        ]
+    ],
+    'fields' => [
+        'tokenManager' => [
+            'computed' => [
+                'tokens' => function () {
+                    $user = kirby()->user();
+                    if (!$user || $this->model()->id() !== $user->id()) return [];
+                    $tokens = A::map(Yaml::decode($this->value()), function ($item) {
+                        $item['info'] = $item['created'];
+                        return $item;
+                    });
+                    return $tokens;
+                },
+                'empty' => function () {
+                    $user = kirby()->user();
+                    if (!$user || $this->model()->id() !== $user->id()) return ['text' => 'You can only edit your own tokens.'];
+                    return ['text' => 'No tokens created yet.'];
+                }
+            ]
+        ]
+    ],
     'blueprints' => [
         'files/moment' => __DIR__ . '/blueprints/files/moment.yml',
         'pages/moments' => __DIR__ . '/blueprints/pages/moments.yml',
