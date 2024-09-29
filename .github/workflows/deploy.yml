@@ -2,25 +2,26 @@ name: Deployment
 
 on:
   push:
-    branches: [main]
+    tags:
+      - v*
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup Node.js environment
-      uses: actions/setup-node@v3.0.0
+      uses: actions/setup-node@v4
       with:
         node-version-file: .nvmrc
 
-    - uses: pnpm/action-setup@v2
+    - uses: pnpm/action-setup@v4
       name: Install pnpm
       id: pnpm-install
       with:
-        version: 8
+        version: 9
         run_install: false
 
     - name: Get pnpm store directory
@@ -28,7 +29,7 @@ jobs:
       run: |
         echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       name: Setup pnpm cache
       with:
         path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
