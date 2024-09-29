@@ -140,9 +140,9 @@ function getNewMomentRoute()
  */
 function verifyToken()
 {
-    $authHeader = kirby()->request()->header('Authorization');
+    $authHeader = kirby()->request()->header('X-MOMENTS-TOKEN');
     $token = option('femundfilou.kirby-moments.token', '');
-    return $token && $authHeader && $authHeader === "Bearer {$token}";
+    return $token && $authHeader && $authHeader === "{$token}";
 }
 
 /**
