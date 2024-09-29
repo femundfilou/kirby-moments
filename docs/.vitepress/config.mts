@@ -51,7 +51,11 @@ export default defineConfig({
 		socialLinks: [
 			{ icon: 'github', link: 'https://github.com/femundfilou/kirby-moments' },
 			{ icon: 'mastodon', link: 'https://mas.to/@jukra00' }
-		]
+		],
+		footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2024-present Justus Kraft | <a href="https://femundfilou.com/privacy-policy">Privacy Policy</a> | <a href="https://femundfilou.com/imprint">Imprint</a>'
+    }
 	},
 	vite: {
 		resolve: {
