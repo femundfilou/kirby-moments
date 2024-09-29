@@ -1,5 +1,17 @@
 
 
+## [1.0.0-beta.3](///compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-09-29)
+
+
+### Features
+
+* update translations 0b8f050
+
+
+### Bug Fixes
+
+* update block ffa3794
+
 ## 1.0.0-beta.2 (2024-09-29)
 
 
