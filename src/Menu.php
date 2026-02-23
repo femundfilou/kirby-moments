@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Moinframe\Moments;
 
@@ -38,7 +38,7 @@ class Menu
             'label'   => $label ?? t('moinframe.moments.panel.menu.label'),
             'link'    => $link,
             'icon'    => $icon,
-            'current' => fn() => str_contains(static::path(), $link)
+            'current' => fn () => str_contains(static::path(), $link)
         ];
     }
 
@@ -53,9 +53,9 @@ class Menu
         return [
             'label'   => $label,
             'icon'    => $icon,
-            'current' => fn(string $id = null) => $id === 'site' && A::every(
+            'current' => fn (string|null $id = null) => $id === 'site' && A::every(
                 static::$pages,
-                fn($page) => !Str::contains(static::path(), $page['link'])
+                fn ($page) => !Str::contains(static::path(), $page['link'])
             ),
         ];
     }

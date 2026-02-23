@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 echo '<?xml-stylesheet type="text/xsl" href="' . $site->getMomentsPage()?->url() . '/feed.xsl"?>';

@@ -1,9 +1,9 @@
 <?php
 if ($image = $moment->image()) :
-	$type = $type ?? 'lightbox';
-	$sizes = $type === 'grid' ? option('moinframe.moments.thumbs.sizes.grid', 'auto') : option('moinframe.moments.thumbs.sizes.lightbox', '100vw');
-	$alt = $moment->alt()->or($moment->text())->or($moment->title())->escape();
-?>
+    $type = $type ?? 'lightbox';
+    $sizes = $type === 'grid' ? option('moinframe.moments.thumbs.sizes.grid', 'auto') : option('moinframe.moments.thumbs.sizes.lightbox', '100vw');
+    $alt = $moment->alt()->or($moment->text())->or($moment->title())->escape();
+    ?>
 	<figure class="moments-image">
 		<picture>
 			<?php if ($type === 'grid') : ?>

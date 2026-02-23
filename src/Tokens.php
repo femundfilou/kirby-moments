@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Moinframe\Moments;
 
@@ -104,7 +104,7 @@ class Tokens
         $tokens = static::readTokens($user);
         $tokens = array_values(array_filter(
             $tokens,
-            fn(array $t) => $t['id'] !== $tokenId
+            fn (array $t) => $t['id'] !== $tokenId
         ));
 
         kirby()->impersonate('kirby');
@@ -123,7 +123,7 @@ class Tokens
         }
 
         return array_map(
-            fn(array $t) => [
+            fn (array $t) => [
                 'id' => $t['id'],
                 'name' => $t['name'],
                 'created' => $t['created'],
