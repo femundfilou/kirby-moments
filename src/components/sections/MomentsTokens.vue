@@ -1,11 +1,15 @@
 <template>
   <k-section :label="label">
     <k-button-group slot="options">
-      <k-button icon="add" size="xs" variant="filled" theme="positive" :text="t('moinframe.moments.panel.tokens.add')"
-        @click="openCreateDialog" />
+      <k-button icon="add" size="xs" :disabled="disabled" variant="filled" theme="positive"
+        :text="t('moinframe.moments.panel.tokens.add')" @click="openCreateDialog" />
     </k-button-group>
 
-    <k-items v-if="tokens.length" :items="items" :layout="'list'" @option="onOption" />
+    <k-empty v-if="disabled">
+      {{ t('moinframe.moments.panel.tokens.disabled') }}
+    </k-empty>
+
+    <k-items v-else-if="tokens.length" :items="items" :layout="'list'" @option="onOption" />
 
     <k-empty v-else icon="key" @click="openCreateDialog">
       {{ t('moinframe.moments.panel.tokens.empty') }}
@@ -68,7 +72,7 @@ export default {
         on: {
           submit: async (values) => {
             try {
-              const response = await this.$api.post("moments/tokens", {
+              const response = await this.$api.post("moinframe-moments/tokens", {
                 name: values.name,
               });
 
@@ -115,7 +119,7 @@ export default {
         on: {
           submit: async () => {
             try {
-              await this.$api.delete("moments/tokens/" + tokenId);
+              await this.$api.delete("moinframe-moments/tokens/" + tokenId);
               this.$panel.dialog.close();
               this.$panel.notification.success(
                 this.$t("moinframe.moments.panel.tokens.deleted")

@@ -7,6 +7,9 @@ return [
         },
     ],
     'computed' => [
+        'disabled' => function () {
+            return !option('moinframe.moments.tokens');
+        },
         'tokens' => function () {
             $user = $this->model();
             if (!$user instanceof \Kirby\Cms\User) {

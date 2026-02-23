@@ -25,7 +25,7 @@ Kirby::plugin('moinframe/moments', [
     'api' => [
         'routes' => option('moinframe.moments.tokens', true) !== false ? [
             [
-                'pattern' => 'moments/tokens',
+                'pattern' => 'moinframe-moments/tokens',
                 'method' => 'GET',
                 'action' => function () {
                     $user = kirby()->user();
@@ -36,7 +36,7 @@ Kirby::plugin('moinframe/moments', [
                 },
             ],
             [
-                'pattern' => 'moments/tokens',
+                'pattern' => 'moinframe-moments/tokens',
                 'method' => 'POST',
                 'action' => function () {
                     $user = kirby()->user();
@@ -51,7 +51,7 @@ Kirby::plugin('moinframe/moments', [
                 },
             ],
             [
-                'pattern' => 'moments/tokens/(:any)',
+                'pattern' => 'moinframe-moments/tokens/(:any)',
                 'method' => 'DELETE',
                 'action' => function (string $tokenId) {
                     $user = kirby()->user();
@@ -145,7 +145,9 @@ Kirby::plugin('moinframe/moments', [
             return $field->exists() && $field->isNotEmpty() ? $field->toDate($format) : '';
         },
         'toMomentsDate' => function ($field) {
-            if (!$field->exists() || $field->isEmpty()) return '';
+            if (!$field->exists() || $field->isEmpty()) {
+                return '';
+            }
 
             $format = option('moinframe.moments.dateformat');
             if ($format) {
