@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.0-beta.6](///compare/v2.0.0-beta.5...v2.0.0-beta.6) (2026-02-23)
+
+### Features
+
+* disable tokens optionally 7d908c1
+
+### Bug Fixes
+
+* disable section if tokens are disabled b2de5ec
+
 ## [2.0.0-beta.5](///compare/v2.0.0-beta.4...v2.0.0-beta.5) (2026-02-04)
 
 ### Features
