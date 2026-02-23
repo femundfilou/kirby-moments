@@ -23,7 +23,7 @@ Kirby::plugin('moinframe/moments', [
         'moments' => require __DIR__ . '/areas/moments.php',
     ],
     'api' => [
-        'routes' => [
+        'routes' => option('moinframe.moments.tokens', true) !== false ? [
             [
                 'pattern' => 'moments/tokens',
                 'method' => 'GET',
@@ -62,7 +62,7 @@ Kirby::plugin('moinframe/moments', [
                     return ['status' => 'ok'];
                 },
             ],
-        ],
+        ] : [],
     ],
     'collections' => [
         'moments/all' => require_once __DIR__ . '/collections/moments/all.php'
@@ -137,6 +137,7 @@ Kirby::plugin('moinframe/moments', [
             ]
         ],
         'token' => '',
+        'tokens' => true,
     ],
     'fieldMethods' => [
         'toMomentsTimestamp' => function ($field) {

@@ -38,7 +38,9 @@ return function () {
         $routes = array_merge($routes, getFeedRoutes($momentsSlug, $isHomepage));
     }
 
-    $routes[] = getNewMomentRoute();
+    if (option('moinframe.moments.tokens', true) !== false) {
+        $routes[] = getNewMomentRoute();
+    }
 
     return $routes;
 };

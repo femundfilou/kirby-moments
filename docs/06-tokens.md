@@ -56,3 +56,7 @@ return [
 ```
 
 If both a config token and per-user tokens exist, the config token is checked first.
+
+## Disabling tokens
+
+You can disable the entire token system by setting `tokens` to `false` in your config. This removes the token API routes and the upload endpoint. See [Configuration](/docs/moinframe-moments/02-configuration#disable-the-token-system) for details.
