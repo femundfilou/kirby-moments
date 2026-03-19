@@ -13,90 +13,6 @@ F::loadClasses([
 
 
 Kirby::plugin('moinframe/moments', [
-    'blueprints' => [
-        'files/moment' => __DIR__ . '/blueprints/files/moment.yml',
-        'pages/moments' => __DIR__ . '/blueprints/pages/moments.yml',
-        'blocks/moments' => __DIR__ . '/blueprints/blocks/moments.yml',
-        'sections/moments' => __DIR__ . '/blueprints/sections/moments.yml',
-    ],
-    'areas' => [
-        'moments' => require __DIR__ . '/areas/moments.php',
-    ],
-    'api' => [
-        'routes' => option('moinframe.moments.tokens', true) !== false ? [
-            [
-                'pattern' => 'moinframe-moments/tokens',
-                'method' => 'GET',
-                'action' => function () {
-                    $user = kirby()->user();
-                    if (!$user) {
-                        throw new \Exception('Unauthorized');
-                    }
-                    return \Moinframe\Moments\Tokens::list($user->id());
-                },
-            ],
-            [
-                'pattern' => 'moinframe-moments/tokens',
-                'method' => 'POST',
-                'action' => function () {
-                    $user = kirby()->user();
-                    if (!$user) {
-                        throw new \Exception('Unauthorized');
-                    }
-                    $name = trim(kirby()->request()->body()->get('name', ''));
-                    if (empty($name)) {
-                        throw new \Exception('Token name is required');
-                    }
-                    return \Moinframe\Moments\Tokens::create($user->id(), $name);
-                },
-            ],
-            [
-                'pattern' => 'moinframe-moments/tokens/(:any)',
-                'method' => 'DELETE',
-                'action' => function (string $tokenId) {
-                    $user = kirby()->user();
-                    if (!$user) {
-                        throw new \Exception('Unauthorized');
-                    }
-                    \Moinframe\Moments\Tokens::delete($user->id(), $tokenId);
-                    return ['status' => 'ok'];
-                },
-            ],
-        ] : [],
-    ],
-    'collections' => [
-        'moments/all' => require_once __DIR__ . '/collections/moments/all.php'
-    ],
-    'components' => [
-        'file::url' => function ($kirby, $file) {
-            if ($kirby->visitor()->prefersJson() && $file->template() === 'moment') {
-                return $kirby->url() . '/' . $file->parent()->slug() . '/' . $file->name();
-            }
-            return $file->mediaUrl();
-        }
-    ],
-    'hooks' => [
-        'system.loadPlugins:after' => function () {
-            $kirby = Kirby::instance();
-            $storeId = option('moinframe.moments.storeid', 'moments');
-
-            if ($kirby->page($storeId)?->exists()) {
-                return;
-            }
-
-            $kirby->impersonate('kirby');
-            $momentsPage = $kirby->site()->createChild([
-                'slug' => $storeId,
-                'template' => 'moments',
-                'content' => [
-                    'title' => t('moinframe.moments.panel.section.label'),
-                    'uuid' => 'moments'
-                ]
-            ]);
-            $momentsPage->changeStatus('unlisted');
-            $kirby->impersonate('nobody');
-        },
-    ],
     'options' => [
         'dateformat' => '',
         'overview' => false,
@@ -139,51 +55,30 @@ Kirby::plugin('moinframe/moments', [
         'token' => '',
         'tokens' => true,
     ],
-    'fieldMethods' => [
-        'toMomentsTimestamp' => function ($field) {
-            $format = option('date.handler') === 'intl' ? 'yyyy-MM-dd\'T\'HH:mm:ssXXX' : 'c';
-            return $field->exists() && $field->isNotEmpty() ? $field->toDate($format) : '';
-        },
-        'toMomentsDate' => function ($field) {
-            if (!$field->exists() || $field->isEmpty()) {
-                return '';
-            }
-
-            $format = option('moinframe.moments.dateformat');
-            if ($format) {
-                return $field->toDate($format);
-            }
-
-            $locale = kirby()->language()?->code() ?? 'en';
-            $formatter = new IntlDateFormatter(
-                $locale,
-                IntlDateFormatter::SHORT,
-                IntlDateFormatter::NONE
-            );
-
-            return $formatter->format($field->toTimestamp());
-        }
+    'blueprints' => [
+        'files/moment' => __DIR__ . '/blueprints/files/moment.yml',
+        'pages/moments' => __DIR__ . '/blueprints/pages/moments.yml',
+        'blocks/moments' => __DIR__ . '/blueprints/blocks/moments.yml',
+        'sections/moments' => __DIR__ . '/blueprints/sections/moments.yml',
     ],
+    'areas' => [
+        'moments' => require __DIR__ . '/areas/moments.php',
+    ],
+    'api' => [
+        'routes' => option('moinframe.moments.tokens', true) !== false ? require __DIR__ . '/extensions/apiRoutes.php' : [],
+    ],
+    'collections' => [
+        'moments/all' => require_once __DIR__ . '/collections/moments/all.php'
+    ],
+    'components' => require __DIR__ . '/extensions/components.php',
+    'hooks' => require __DIR__ . '/extensions/hooks.php',
+    'fieldMethods' => require __DIR__ . '/extensions/fieldMethods.php',
     'pageModels' => [
         'moments' => 'MomentsPage',
         'moment'  => 'MomentPage',
     ],
-    'routes' => require __DIR__ . '/config/routes.php',
-    'siteMethods' => [
-        'getMomentsStorePage' => function () {
-            return option('moinframe.moments.storeid') ? kirby()->page(option('moinframe.moments.storeid')) : site();
-        },
-        'getMomentsPage' => function () {
-            $pageid = option('moinframe.moments.pageid');
-            if (!$pageid) {
-                return site()->getMomentsStorePage();
-            }
-            if ($pageid === '/') {
-                return site()->homePage();
-            }
-            return kirby()->page($pageid);
-        }
-    ],
+    'routes' => require __DIR__ . '/extensions/routes.php',
+    'siteMethods' => require __DIR__ . '/extensions/siteMethods.php',
     'sections' => [
         'moments-tokens' => require __DIR__ . '/sections/tokens.php',
     ],
@@ -205,5 +100,5 @@ Kirby::plugin('moinframe/moments', [
         'feed.xsl' => __DIR__ . '/templates/feed.xsl.php',
         'feed' => __DIR__ . '/templates/feed.php'
     ],
-    'translations' => require __DIR__ . '/config/translations.php',
+    'translations' => require __DIR__ . '/extensions/translations.php',
 ]);
