@@ -6,6 +6,7 @@ template: moment
 parent: site.getMomentsStorePage
 query: model.images.filterBy('template', 'moment')
 empty: moinframe.moments.panel.section.empty
+limit: 20
 image:
   aspect: 1
   cover: true

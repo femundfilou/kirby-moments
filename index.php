@@ -22,6 +22,7 @@ Kirby::plugin('moinframe/moments', [
             'active' => false,
             'language' => ''
         ],
+        'limit' => 8,
         'lightbox' => true,
         'thumbs' => [
             'sizes' => [

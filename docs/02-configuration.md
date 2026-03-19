@@ -19,6 +19,19 @@ return [
 ];
 ```
 
+## Limit the number of moments
+
+By default, the moments section will display 8 moments at once. You can change this limit like this:
+
+```php
+return [
+  // ... other options
+  'moinframe.moments' => [
+    'limit' => 20,
+  ]
+];
+```
+
 ## Use a different page for display
 
 You can change the visible parent of your moments. This will replace your `storeid` in the lightbox url, but still upload all images to your storage page. The storage page will redirect to this page.
