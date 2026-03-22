@@ -43,7 +43,7 @@ curl -X POST https://your-website.test/v1/moments/new \
   -F "file=@photo.jpg"
 ```
 
-This works well with the [Apple Shortcut](/docs/moinframe-moments/05-shortcuts).
+This works well with the [Apple Shortcut](./05-shortcuts.md).
 
 ## Config token
 
@@ -59,4 +59,4 @@ If both a config token and per-user tokens exist, the config token is checked fi
 
 ## Disabling tokens
 
-You can disable the entire token system by setting `tokens` to `false` in your config. This removes the token API routes and the upload endpoint. See [Configuration](/docs/moinframe-moments/02-configuration#disable-the-token-system) for details.
+You can disable the entire token system by setting `tokens` to `false` in your config. This removes the token API routes and the upload endpoint. See [Configuration](./02-configuration.md#disable-the-token-system) for details.

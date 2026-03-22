@@ -119,7 +119,7 @@ return [
 
 ## API Tokens
 
-You can create per-user API tokens directly from the Panel to authenticate uploads. See [API Tokens](/docs/moinframe-moments/06-tokens) for setup.
+You can create per-user API tokens directly from the Panel to authenticate uploads. See [API Tokens](./06-tokens.md) for setup.
 
 ### Disable the token system
 
@@ -138,7 +138,7 @@ Image display routes, feeds, and all other functionality remain unaffected.
 
 ## Enable endpoint for Apple Shortcuts
 
-You can use an Apple Shortcut to upload images quickly. See the [configuration](/docs/moinframe-moments/05-shortcuts).
+You can use an Apple Shortcut to upload images quickly. See the [configuration](./05-shortcuts.md).
 
 
 ## Disable Enhanced Lightbox

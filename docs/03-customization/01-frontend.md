@@ -5,7 +5,7 @@ title: Frontend
 By default the configured store page (e.g. `moments`) will display the grid of your moments. You can also include a block or a snippet to output your moments on another page.
 
 > [!TIP]
-> To make the lightbox aware of the page, where your moments are displayed, you can adjust the `pageid` in your configuration. [See how](/docs/moinframe-moments/02-configuration)
+> To make the lightbox aware of the page, where your moments are displayed, you can adjust the `pageid` in your configuration. [See how](../02-configuration.md)
 
 
 ## Use the block

@@ -20,7 +20,7 @@ If you use the **snippet** or **block** on your pages, you have to include the s
 
 ## Remove styles
 
-If you don't want to include the styles, you can overwrite the `layout/moments` snippet and remove the tags. Here is [how you do it](/docs/moinframe-moments/03-customization/01-frontend).
+If you don't want to include the styles, you can overwrite the `layout/moments` snippet and remove the tags. Here is [how you do it](./01-frontend.md).
 
 ## Modify styles
 

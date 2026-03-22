@@ -27,8 +27,8 @@ This plugin needs a page to store all images. By default, the plugin will look f
 After install, the plugin will create the store page itself and set it to published.
 
 > [!TIP] **Custom page slug**
-> You can customize the slug being used through the [configuration](/docs/moinframe-moments/02-configuration). If you change the slug after initialization, be sure to delete the previously generated page.
+> You can customize the slug being used through the [configuration](./02-configuration.md). If you change the slug after initialization, be sure to delete the previously generated page.
 
 ## Apple Shortcut
 
-You can use an Apple Shortcut to upload images quickly. See the [configuration](/docs/moinframe-moments/05-shortcuts).
+You can use an Apple Shortcut to upload images quickly. See the [configuration](./05-shortcuts.md).

@@ -13,7 +13,7 @@ You can install the shortcut via this link:
 
 ## Enable Apple Shortcut
 
-To use the shortcut, you need an API token. The recommended way is to create a per-user token in the Panel. See [API Tokens](/docs/moinframe-moments/06-tokens) for setup instructions.
+To use the shortcut, you need an API token. The recommended way is to create a per-user token in the Panel. See [API Tokens](./06-tokens.md) for setup instructions.
 
 Alternatively, you can set a shared token in your `site/config/config.php`:
 
