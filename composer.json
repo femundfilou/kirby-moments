@@ -1,6 +1,6 @@
 {
     "name": "moinframe/kirby-moments",
-    "description": "Little Moments Matter. Share Yours.",
+    "description": "A photo feed plugin for Kirby CMS that lets you share images on your own website.",
     "license": "MIT",
     "homepage": "https://moinfra.me/docs/moinframe-moments",
     "type": "kirby-plugin",
