@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.0-beta.7](///compare/v2.0.0-beta.6...v2.0.0-beta.7) (2026-03-23)
+
+### Features
+
+* add limit config option 430c682
+
+### Bug Fixes
+
+* use excerpt of text on panel view e9e29c9
+
 ## [2.0.0-beta.6](///compare/v2.0.0-beta.5...v2.0.0-beta.6) (2026-02-23)
 
 ### Features
