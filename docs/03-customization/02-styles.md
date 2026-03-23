@@ -12,15 +12,9 @@ If you use the **snippet** or **block** on your pages, you have to include the s
 
 ```html
 <head>
-  <!-- other content-->
   <?= css(Kirby::plugin('moinframe/moments')->asset('moments.css')->url()) ?>
 </head>
 ```
-
-
-## Remove styles
-
-If you don't want to include the styles, you can overwrite the `layout/moments` snippet and remove the tags. Here is [how you do it](./01-frontend.md).
 
 ## Modify styles
 
@@ -48,3 +42,8 @@ You can modify the look of the grid and lightbox by overwriting some custom prop
   --moments-line-height: 1;
 }
 ```
+
+
+## Remove styles
+
+If you don't want to include the styles, you can overwrite the `layout/moments` snippet and remove the tags. Here is [how you do it](./01-snippets.md).

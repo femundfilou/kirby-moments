@@ -2,8 +2,8 @@
 title: Customization
 ---
 
-You can customize the plugin to your likings.
+You can customize aspect of the plugin:
 
-- **[Frontend](/docs/moinframe-moments/03-customization/01-frontend)** — Use blocks or snippets to display moments on any page, and overwrite the layout, icons, or templates.
-- **[Styles](/docs/moinframe-moments/03-customization/02-styles)** — Include the stylesheet and modify CSS custom properties.
-- **[Javascript](/docs/moinframe-moments/03-customization/03-scripts)** — Learn about the optional JavaScript enhancements (relative dates, lightbox).
+- **[Snippets](./01-snippets.md)**
+- **[Styles](./01-snippets.md)**
+- **[Javascript](./03-scripts.md)**

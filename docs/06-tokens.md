@@ -2,11 +2,11 @@
 title: API Tokens
 ---
 
-API tokens let you authenticate uploads to your Moments feed. Each user can create named tokens directly from the Kirby Panel.
+API tokens are required when you want to enable external uploads to your Moments feed, e.g. using the [Apple Shortcut](./05-shortcuts.md).
 
-## Setup
+## Setup user tokens
 
-Add the token section to a user blueprint, for example `site/blueprints/users/default.yml`:
+Add the token section to the user blueprints, for example `site/blueprints/users/admin.yml`:
 
 ```yaml
 tabs:
@@ -25,7 +25,7 @@ This adds an "API Tokens" section to the user account page in the Panel.
 2. Open the **Moments** tab
 3. Click **New token**
 4. Enter a name (e.g. "My iPhone")
-5. Copy the token immediately -- it will only be shown once
+5. Copy the token, it will only be shown once
 
 The token is sent as an `X-MOMENTS-TOKEN` header when uploading. Only a hash of the token is stored in your account, so the plaintext cannot be recovered.
 
@@ -45,7 +45,7 @@ curl -X POST https://your-website.test/v1/moments/new \
 
 This works well with the [Apple Shortcut](./05-shortcuts.md).
 
-## Config token
+## Shared token
 
 Alternatively, you can set a single shared token in your config. This is useful if you don't need per-user tokens or prefer a simpler setup.
 

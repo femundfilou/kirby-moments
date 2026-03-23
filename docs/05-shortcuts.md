@@ -2,7 +2,7 @@
 title: Apple Shortcuts
 ---
 
-To upload a new image on iOS or Mac OS, you can use an Apple Shortcut to do so.
+To upload a new image on iOS or macOS, you can use a Shortcut to do so.
 
 You can install the shortcut via this link:
 

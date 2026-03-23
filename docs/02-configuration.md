@@ -4,7 +4,83 @@ title: Configuration
 
 ---
 
-You can change certain aspects of the plugin through your `site/config/config.php` configuration.
+You can change aspects of the plugin in your `site/config/config.php`.
+
+## Limit the number of moments
+
+You can change the limit of moments displayed in the grid. By default, the moments section will display 8 moments at once.
+
+```php
+return [
+  'moinframe.moments' => [
+    'limit' => 20,
+  ]
+];
+```
+
+## Use overview page
+
+The moments overview page (listing all moments) is disabled by default and visitors are redirected to the homepage instead. You can enable it if you do not want to use the block or have a simple landing page for your moments.
+
+```php
+return [
+  'moinframe.moments' => [
+    'overview' => true,
+  ]
+];
+```
+
+## Set display page
+
+If you don't use the public overview page, you need to adjust the visible page of your moments.This will make the lightbox and rss feed aware of the page your images are display on, but still upload all images to your storage page. The storage page will redirect to this page. In this example, the images will still be stored in the page `moments` but display as `https://your-website.test/stories/image-1`.
+
+```php
+return [
+  'moinframe.moments' => [
+    'pageid' => 'stories',
+  ]
+];
+```
+
+## Use your homepage as the display page
+
+This will make moment URLs appear at the root level of your site. In this example, the images will be stored in `moments` but display as `https://your-website.test/image-1`. The RSS feed will also be available at `https://your-website.test/feed.xml`.
+
+
+```php
+return [
+  'moinframe.moments' => [
+    'pageid' => '/',
+  ]
+];
+```
+
+
+## RSS Feed
+
+The RSS feed is disabled by default, but you can enable it and also change the language.
+```php
+return [
+  'moinframe.moments' => [
+    'feed' => [
+      'active' => true,
+      'language' => 'en'
+    ],
+  ]
+];
+```
+
+## Enhanced Lightbox
+
+The JavaScript-enhanced lightbox is enabled by default. When enabled, clicking a moment opens it in an overlay without a full page reload, with keyboard navigation (arrow keys, escape) and URL updates via the History API. The lightbox is progressively enhanced - it still works without JavaScript. You can disable it like this:
+
+```php
+return [
+  'moinframe.moments' => [
+    'lightbox' => false,
+  ]
+];
+```
 
 ## Change date format
 
@@ -12,55 +88,25 @@ You can change, how the date is being displayed. By default, the plugin will che
 
 ```php
 return [
-  // ... other options
   'moinframe.moments' => [
     'dateformat' => 'dd.MM.YYYY',
   ]
 ];
 ```
 
-## Limit the number of moments
 
-By default, the moments section will display 8 moments at once. You can change this limit like this:
+## Token system
+
+If you don't need the upload API or token management, you can disable the token system entirely. This removes the token API routes and the upload endpoint (`/v1/moments/new`) from your site.
 
 ```php
 return [
-  // ... other options
   'moinframe.moments' => [
-    'limit' => 20,
+    'tokens' => false,
   ]
 ];
 ```
 
-## Use a different page for display
-
-You can change the visible parent of your moments. This will replace your `storeid` in the lightbox url, but still upload all images to your storage page. The storage page will redirect to this page.
-
-```php
-return [
-  // ... other options
-  'moinframe.moments' => [
-    'pageid' => 'stories',
-  ]
-];
-```
-
-In this example, the images will still be stored in the page `moments` but display as `https://your-website.test/stories/image-1`.
-
-### Use your homepage as the display page
-
-You can set `pageid` to `'/'` to display moments directly on your homepage. This will make moment URLs appear at the root level of your site.
-
-```php
-return [
-  // ... other options
-  'moinframe.moments' => [
-    'pageid' => '/',
-  ]
-];
-```
-
-In this example, the images will be stored in `moments` but display as `https://your-website.test/image-1`. The RSS feed will also be available at `https://your-website.test/feed.xml`.
 
 ## Use a different page for storage
 
@@ -68,7 +114,6 @@ You can change the page used to store all images by changing the slug here. Be s
 
 ```php
 return [
-  // ... other options
   'moinframe.moments' => [
     'storeid' => 'momentsstore',
   ]
@@ -81,7 +126,6 @@ You can adjust the thumbnails being created by modifying the srcsets. You can al
 
 ```php
 return [
-  // ... other options
   'moinframe.moments' => [
     'thumbs' => [
       'sizes' => [
@@ -116,70 +160,3 @@ return [
   ]
 ];
 ```
-
-## API Tokens
-
-You can create per-user API tokens directly from the Panel to authenticate uploads. See [API Tokens](./06-tokens.md) for setup.
-
-### Disable the token system
-
-If you don't need the upload API or token management, you can disable the token system entirely. This removes the token API routes and the upload endpoint (`/v1/moments/new`) from your site.
-
-```php
-return [
-  // ... other options
-  'moinframe.moments' => [
-    'tokens' => false,
-  ]
-];
-```
-
-Image display routes, feeds, and all other functionality remain unaffected.
-
-## Enable endpoint for Apple Shortcuts
-
-You can use an Apple Shortcut to upload images quickly. See the [configuration](./05-shortcuts.md).
-
-
-## Disable Enhanced Lightbox
-
-By default, the JavaScript-enhanced lightbox is enabled. When enabled, clicking a moment opens it in an overlay without a full page reload, with keyboard navigation (arrow keys, escape) and URL updates via the History API. The lightbox is progressively enhanced - it still works without JavaScript. You can disable it like this:
-
-```php
-return [
-  // ... other options
-  'moinframe.moments' => [
-    'lightbox' => false,
-  ]
-];
-```
-
-## Moments Overview Page
-
-By default, the moments overview page (listing all moments) is disabled and visitors are redirected to the homepage instead. You can enable it if you do not want to use the block or have a simple landing page for your moments.
-
-```php
-return [
-  // ... other options
-  'moinframe.moments' => [
-    'overview' => true,
-  ]
-];
-```
-
-## RSS Feed
-
-By default, the RSS feed is disabled. You can enable it and optionally change the language set in the feed.
-
-```php
-return [
-  // ... other options
-  'moinframe.moments' => [
-    'feed' => [
-      'active' => true,
-      'language' => 'en'
-    ],
-  ]
-];
-```
-
