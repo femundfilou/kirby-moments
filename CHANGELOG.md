@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0-beta.8](///compare/v2.0.0-beta.7...v2.0.0-beta.8) (2026-03-23)
+
+### Bug Fixes
+
+* composer description d97b18c
+
 ## [2.0.0-beta.7](///compare/v2.0.0-beta.6...v2.0.0-beta.7) (2026-03-23)
 
 ### Features
