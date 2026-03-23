@@ -39,4 +39,4 @@ Use either a per-user token created in the Panel or the `moinframe.moments.token
 
 ### API Endpoint
 
-Add your websites domain followed by `/v1/moments/new`, for example `https://your-website.test/v1/moments/new`.
+Add your websites domain followed by `/moinframe-moments/new`, for example `https://your-website.test/moinframe-moments/new`.

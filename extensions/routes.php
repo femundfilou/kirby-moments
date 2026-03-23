@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * Defines routes for the Kirby Moments plugin
@@ -156,7 +156,7 @@ function renderFeedPage(string $contentType, string $renderType = 'html'): Respo
 function getNewMomentRoute(): array
 {
     return [
-        'pattern' => '/v1/moments/new',
+        'pattern' => 'moinframe-moments/new',
         'method' => 'POST',
         'action' => function () {
             if (!verifyToken()) {
@@ -213,6 +213,7 @@ function verifyToken(): bool
 function uploadFile(Page $page): File
 {
     $upload = kirby()->request()->file('file');
+    $text = kirby()->request()->get('text') ?? "";
 
     if (!$upload || $upload['error'] !== UPLOAD_ERR_OK) {
         throw new InvalidArgumentException('Upload failed.');
@@ -237,13 +238,13 @@ function uploadFile(Page $page): File
     }
 
     // Secure filename using cryptographically secure random bytes
-    $filename = bin2hex(random_bytes(16)) . '.' . $extension;
+    $filename = bin2hex(random_bytes(4)) . '.' . $extension;
 
     kirby()->impersonate('kirby');
     return $page->createFile([
         'source'   => $upload['tmp_name'],
         'filename' => $filename,
         'template' => 'moment',
-        'content'  => ['date' => date('Y-m-d H:i:s'), 'text' => '']
+        'content'  => ['date' => date('Y-m-d H:i:s'), 'text' => Str::unhtml($text)]
     ]);
 }

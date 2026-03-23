@@ -35,10 +35,10 @@ Click the options menu on any token in the list and select **Delete**. Devices u
 
 ## Using a token
 
-Send a `POST` request to `/v1/moments/new` with the token in the `X-MOMENTS-TOKEN` header:
+Send a `POST` request to `/moinframe-moments/new` with the token in the `X-MOMENTS-TOKEN` header:
 
 ```sh
-curl -X POST https://your-website.test/v1/moments/new \
+curl -X POST https://your-website.test/moinframe-moments/new \
   -H "X-MOMENTS-TOKEN: your-token-here" \
   -F "file=@photo.jpg"
 ```

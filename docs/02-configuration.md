@@ -97,7 +97,7 @@ return [
 
 ## Token system
 
-If you don't need the upload API or token management, you can disable the token system entirely. This removes the token API routes and the upload endpoint (`/v1/moments/new`) from your site.
+If you don't need the upload API or token management, you can disable the token system entirely. This removes the token API routes and the upload endpoint (`/moinframe-moments/new`) from your site.
 
 ```php
 return [
