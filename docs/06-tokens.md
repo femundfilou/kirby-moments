@@ -6,7 +6,7 @@ API tokens are required when you want to enable external uploads to your Moments
 
 ## Setup user tokens
 
-Add the token section to the user blueprints, for example `site/blueprints/users/admin.yml`:
+Add the token section to the user blueprints, for example `site/blueprints/users/default.yml`:
 
 ```yaml
 tabs:
