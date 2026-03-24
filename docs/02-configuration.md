@@ -89,7 +89,7 @@ You can change, how the date is being displayed. By default, the plugin will che
 ```php
 return [
   'moinframe.moments' => [
-    'dateformat' => 'dd.MM.YYYY',
+    'dateformat' => 'd.m.Y',
   ]
 ];
 ```
