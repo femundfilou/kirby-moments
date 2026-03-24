@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.1](///compare/v2.0.0...v2.0.1) (2026-03-24)
+
+### Bug Fixes
+
+* update shortcut link 6537f61
+
 ## [2.0.0](///compare/v2.0.0-beta.9...v2.0.0) (2026-03-24)
 
 ### Bug Fixes
