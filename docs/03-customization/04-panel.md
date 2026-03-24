@@ -4,7 +4,7 @@ title: Panel
 
 You can add your moments to the sidebar of your Kirby panel. This plugin provides two static methods to quickly add the menu entry. To add the menu page, you can copy and paste the following snippet to your `site/config/config.php`.
 
-![Screenshot of panel menu](./menu.jpg)
+![Screenshot of panel menu](../menu.jpg)
 
 
 ```php
