@@ -7,7 +7,7 @@ To upload a new image on iOS or macOS, you can use a Shortcut to do so.
 You can install the shortcut via this link:
 
 
-[Install Apple Shortcut](https://www.icloud.com/shortcuts/8e095f1e30f84ecab7f408a1473d3a5a)
+[Install Apple Shortcut](https://www.icloud.com/shortcuts/f18c2e2958594e528730b9e4a84ab680)
 
 
 
