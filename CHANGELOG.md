@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0](///compare/v2.0.0-beta.9...v2.0.0) (2026-03-24)
+
+### Bug Fixes
+
+* handle multi and single lang in routes 46d19f3
+
 ## [2.0.0-beta.9](///compare/v2.0.0-beta.8...v2.0.0-beta.9) (2026-03-24)
 
 ### Bug Fixes
