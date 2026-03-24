@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0-beta.9](///compare/v2.0.0-beta.8...v2.0.0-beta.9) (2026-03-24)
+
+### Bug Fixes
+
+* encode xml feed properly 3152e91
+* remove unused lang param in homepage route 4b4fe15
+
 ## [2.0.0-beta.8](///compare/v2.0.0-beta.7...v2.0.0-beta.8) (2026-03-23)
 
 ### Bug Fixes
