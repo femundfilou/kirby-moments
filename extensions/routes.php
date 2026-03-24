@@ -63,8 +63,7 @@ function getRedirectRoutes(string $momentsSlug, Page $momentsStore, ?Page $momen
         $routes[] = [
             'pattern' => '(:all)',
             'method' => 'GET',
-            'language' => '*',
-            'action' => function ($lang, $id) use ($momentsStore) {
+            'action' => function ($id) use ($momentsStore) {
                 if (in_array($id, ['feed.xml', 'feed.xsl'])) {
                     return $this->next();
                 }
