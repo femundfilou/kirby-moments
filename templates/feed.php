@@ -10,20 +10,20 @@ $momentsPage = $site->getMomentsPage();
 ?>
 <rss version="2.0">
     <channel>
-        <title><?= $site->title()->html() ?></title>
+        <title><?= $site->title()->xml() ?></title>
         <link><?= $momentsPage?->url() ?? $site->url() ?></link>
-        <description><?= $site->description()->html() ?></description>
+        <description><?= $site->description()->xml() ?></description>
         <language><?= $feedLanguage ?></language>
         <?php foreach (collection('moments/all') as $moment) : ?>
             <item>
-                <title><?= $moment->title()->html() ?></title>
+                <title><?= $moment->title()->xml() ?></title>
                 <link><?= $moment->url() ?></link>
                 <?php if ($image = $moment->image()) : ?>
                     <description>
                         <![CDATA[<img src="<?= $image->resize(900)->url() ?>" alt="<?= $moment->alt()->or($moment->text())->or($moment->title())->html() ?>"/><br><?= $moment->text()->html() ?>]]>
                     </description>
                 <?php else : ?>
-                    <description><?= $moment->text()->html() ?></description>
+                    <description><?= $moment->text()->xml() ?></description>
                 <?php endif; ?>
                 <?php if ($moment->date()->isNotEmpty()) : ?>
                     <pubDate><?= date(DATE_RSS, $moment->date()->toTimestamp()) ?></pubDate>
