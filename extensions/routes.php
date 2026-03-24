@@ -79,7 +79,10 @@ function getRedirectRoutes(string $momentsSlug, Page $momentsStore, ?Page $momen
             'pattern' => "/{$momentsSlug}/(:all)",
             'method' => 'GET',
             'language' => '*',
-            'action' => function ($lang, $id) use ($momentsStore) {
+            'action' => function ($langOrId, $id = null) use ($momentsStore) {
+                if ($id === null) {
+                    $id = $langOrId;
+                }
                 if (in_array($id, ['feed.xml', 'feed.xsl'])) {
                     return $this->next();
                 }
@@ -94,7 +97,10 @@ function getRedirectRoutes(string $momentsSlug, Page $momentsStore, ?Page $momen
         'pattern' => "/{$momentsStore->uid()}/(:all)",
         'method' => 'GET',
         'language' => '*',
-        'action' => function ($lang, $id) use ($momentsPage, $isHomepage) {
+        'action' => function ($langOrId, $id = null) use ($momentsPage, $isHomepage) {
+            if ($id === null) {
+                $id = $langOrId;
+            }
             $targetUrl = $isHomepage ? "/{$id}" : "{$momentsPage->url()}/{$id}";
             go($targetUrl, 302);
         }
