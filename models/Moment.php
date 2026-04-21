@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 class MomentPage extends Kirby\Cms\Page
 {
@@ -41,7 +41,7 @@ class MomentPage extends Kirby\Cms\Page
                 'height' => $lightboxCrop?->height(),
                 'sizes' => option('moinframe.moments.thumbs.sizes.lightbox', '100vw'),
             ] : null,
-            'text' => $this->text()->isNotEmpty() ? $this->text()->escape()->value() : null,
+            'text' => $this->text()->isNotEmpty() ? Kirby\Toolkit\Str::unhtml(str_replace(['<br>', '<br/>', '<br />'], "\n", $this->text()->value()))  : null,
             'date' => $this->date()->isNotEmpty() ? [
                 'timestamp' => $this->date()->toMomentsTimestamp(),
                 'formatted' => $this->date()->toMomentsDate(),

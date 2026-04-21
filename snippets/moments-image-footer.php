@@ -1,7 +1,11 @@
+<?php
+
+use Kirby\Toolkit\Str;
+?>
 <?php if ($page->date()->isNotEmpty()) : ?>
     <?php if ($page->text()->isNotEmpty()) : ?>
         <div class="moments-image-footer__text">
-            <p><?= $page->text()->escape() ?></p>
+            <p><?= Str::unhtml(str_replace(['<br>', '<br/>', '<br />'], "\n", $page->text())) ?></p>
         </div>
     <?php endif; ?>
     <moments-time class="moments-image-footer__time">
